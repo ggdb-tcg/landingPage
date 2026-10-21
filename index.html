@@ -3,107 +3,224 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GGDB – Soluzioni su misura per il mondo TCG</title>
-<meta name="description" content="Progettiamo soluzioni digitali su misura per chi lavora nel mondo TCG. Prenota una call di analisi.">
+<title>GGDB – Soluzioni digitali per il mondo TCG</title>
+<meta name="description" content="La tecnologia delle grandi aziende, su misura per il tuo negozio di carte. Per tutto novembre la prima call di analisi è gratuita.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Cpath d='M9 6l7 9v11l-7-9z' fill='%23F5C542'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap">
 <style>
 body{margin:0;background:#0F1115}
 a{color:#F2F0EA}a:hover{color:#FFFFFF}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:84px}
+input,textarea{font:inherit}
+input:focus,textarea:focus{outline:2px solid #F5C542;outline-offset:1px}
+.nav-links{display:flex}
+@media (max-width:760px){.nav-links{display:none}}
 </style>
-<style>html{scroll-behavior:smooth}*{box-sizing:border-box}</style>
 </head>
 <body>
 <div style="background: #0F1115; color: #F2F0EA; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.55; min-height: 100vh">
 
-<!-- NAV -->
-<header style="max-width: 1100px; margin: 0 auto; padding: 24px 24px 0; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
-<div style="display: flex; align-items: center">
-<svg role="img" aria-label="GGDB" width="145" height="36" viewBox="0 -2 404 104"><g fill="none" stroke="#F2F0EA" stroke-width="22" stroke-linejoin="round"><path d="M86 11 H30 A19 19 0 0 0 11 30 V70 A19 19 0 0 0 30 89 H60 A19 19 0 0 0 79 70 V52 H50"></path><path d="M186 11 H130 A19 19 0 0 0 111 30 V70 A19 19 0 0 0 130 89 H160 A19 19 0 0 0 179 70 V52 H150"></path><path stroke-linejoin="miter" d="M211 11 V89 H260 A19 19 0 0 0 279 70 V30 A19 19 0 0 0 260 11 Z"></path></g><path fill="#F2F0EA" d="M300 0 H365.5 A30.5 30.5 0 0 1 389 50 A30.5 30.5 0 0 1 365.5 100 H300 V44 L322 72 V78 H365.5 A8.5 8.5 0 0 0 365.5 61 H328 V39 H365.5 A8.5 8.5 0 0 0 365.5 22 H317 Z"></path><path fill="#F5C542" d="M300 7 L322 35 V64 L300 36 Z"></path></svg>
+<!-- NAV (fissa) -->
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(15, 17, 21, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #232731">
+<div style="max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; gap: 16px; align-items: center; justify-content: space-between">
+<a href="#top" aria-label="GGDB – torna all'inizio" style="text-decoration: none; display: flex; align-items: center; gap: 14px">
+<svg aria-hidden="true" width="121" height="30" viewBox="0 -2 404 104"><g fill="none" stroke="#F2F0EA" stroke-width="22" stroke-linejoin="round"><path d="M86 11 H30 A19 19 0 0 0 11 30 V70 A19 19 0 0 0 30 89 H60 A19 19 0 0 0 79 70 V52 H50"></path><path d="M186 11 H130 A19 19 0 0 0 111 30 V70 A19 19 0 0 0 130 89 H160 A19 19 0 0 0 179 70 V52 H150"></path><path stroke-linejoin="miter" d="M211 11 V89 H260 A19 19 0 0 0 279 70 V30 A19 19 0 0 0 260 11 Z"></path></g><path fill="#F2F0EA" d="M300 0 H365.5 A30.5 30.5 0 0 1 389 50 A30.5 30.5 0 0 1 365.5 100 H300 V44 L322 72 V78 H365.5 A8.5 8.5 0 0 0 365.5 61 H328 V39 H365.5 A8.5 8.5 0 0 0 365.5 22 H317 Z"></path><path fill="#F5C542" d="M300 7 L322 35 V64 L300 36 Z"></path></svg>
+<span style="border-left: 1px solid #3A404D; padding-left: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #C3C8D2; line-height: 1.2">Soluzioni<br>digitali</span>
+</a>
+<nav aria-label="Sezioni" class="nav-links" style="gap: 26px; align-items: center; font-size: 15px">
+<a href="#vantaggi" style="text-decoration: none; color: #C3C8D2">Vantaggi</a>
+<a href="#metodo" style="text-decoration: none; color: #C3C8D2">Metodo</a>
+<a href="#chi-siamo" style="text-decoration: none; color: #C3C8D2">Chi siamo</a>
+<a href="#faq" style="text-decoration: none; color: #C3C8D2">FAQ</a>
+</nav>
+<a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; padding: 11px 18px; border-radius: 8px; font-weight: 600; font-size: 15px; white-space: nowrap">Call gratuita</a>
 </div>
-<a href="https://calendar.app.google/YJnjoNa6VZvuCASM8" target="_blank" rel="noopener" style="text-decoration: none; background: #F5C542; color: #14120A; padding: 12px 18px; border-radius: 8px; font-weight: 600; font-size: 15px">Prenota una call</a>
 </header>
 
 <!-- HERO -->
-<section style="max-width: 1100px; margin: 0 auto; padding: 88px 24px 96px">
+<section id="top" style="max-width: 1100px; margin: 0 auto; padding: 80px 24px 96px">
 <p style="margin: 0 0 24px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Lucca Comics &amp; Games 2026</p>
-<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(38px, 6vw, 70px); line-height: 1.04; letter-spacing: -0.02em; max-width: 920px">Ci siamo conosciuti a Lucca. <span style="color: #F5C542">Ripartiamo dal tuo modo di lavorare.</span></h1>
-<p style="margin: 32px 0 0; font-size: 20px; color: #C3C8D2; max-width: 680px">Progettiamo soluzioni digitali su misura per chi lavora nel mondo TCG. In una prima call approfondiamo i processi della tua attività e valutiamo insieme dove strumenti, software o automazioni possono semplificare il lavoro.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-top: 40px">
-<a href="https://calendar.app.google/YJnjoNa6VZvuCASM8" target="_blank" rel="noopener" style="text-decoration: none; background: #F5C542; color: #14120A; padding: 16px 24px; border-radius: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px">
-<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4"></path><path d="M16 3v4"></path></svg>
-Prenota una call di analisi</a>
-<span style="font-size: 16px; color: #A9AFBB">Preferisci parlarne prima? <a href="https://wa.me/393336397137" target="_blank" rel="noopener" style="color: #F2F0EA; font-weight: 600">Scrivici su WhatsApp</a></span>
+<h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(38px, 6vw, 68px); line-height: 1.04; letter-spacing: -0.02em; max-width: 960px">La tecnologia delle grandi aziende, <span style="color: #F5C542">su misura per il tuo negozio di carte.</span></h1>
+<p style="margin: 32px 0 0; font-size: 20px; color: #C3C8D2; max-width: 680px">Ci siamo conosciuti a Lucca? Ripartiamo dal tuo modo di lavorare. Analizziamo i processi della tua attività e progettiamo soluzioni digitali che ti fanno risparmiare tempo e lavorare meglio.</p>
+<div style="display: inline-flex; align-items: center; gap: 10px; margin-top: 28px; padding: 10px 16px; border: 1.5px solid #F5C542; border-radius: 999px; font-size: 15px; font-weight: 500">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"></path><path d="M2 7h20v5H2z"></path><path d="M12 21V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+Per tutto novembre la prima call di analisi è gratuita
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px">
+<a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; padding: 16px 24px; border-radius: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box">Richiedi la call gratuita</a>
+<a href="https://wa.me/393336397137" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #3A404D; padding: 16px 24px; border-radius: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; box-sizing: border-box">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+Scrivici su WhatsApp</a>
 </div>
 </section>
 
-<!-- AMBITI -->
-<section style="background: #151820; border-top: 1px solid #232731; border-bottom: 1px solid #232731">
+<!-- VANTAGGI -->
+<section id="vantaggi" style="background: #151820; border-top: 1px solid #232731; border-bottom: 1px solid #232731">
 <div style="max-width: 1100px; margin: 0 auto; padding: 80px 24px">
-<h2 style="margin: 0 0 12px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1">Dove possiamo intervenire</h2>
-<p style="margin: 0 0 40px; color: #C3C8D2; max-width: 640px">Alcuni esempi di processi che possiamo analizzare insieme e, se ha senso, migliorare con interventi su misura.</p>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; font-size: 14px">01</div>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Magazzino</h3>
-<p style="margin: 0; color: #C3C8D2">Ubicazioni, quantità e reperibilità dello stock.</p>
+<p style="margin: 0 0 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Cosa cambia per te</p>
+<h2 style="margin: 0 0 12px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1">Meno tempo a rincorrere il lavoro, più tempo per vendere.</h2>
+<p style="margin: 0 0 40px; color: #C3C8D2; max-width: 640px">Ogni negozio è diverso: partiamo dalla tua giornata e lavoriamo dove il beneficio è più grande.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px">
+
+<div style="background: #0F1115; border: 1px solid #2A2F3A; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.25">Trovi ogni carta al primo colpo</h3>
+<p style="margin: 0; color: #C3C8D2; font-size: 16px">Niente più ricerche tra box e raccoglitori: sai sempre cosa hai e dove si trova.</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; font-size: 14px">02</div>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Acquisizione</h3>
-<p style="margin: 0; color: #C3C8D2">Ingresso delle carte e riduzione dei passaggi manuali.</p>
+
+<div style="background: #0F1115; border: 1px solid #2A2F3A; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.25">Più tempo per vendere, meno per inserire</h3>
+<p style="margin: 0; color: #C3C8D2; font-size: 16px">Le carte nuove entrano in catalogo con meno passaggi manuali e meno errori.</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; font-size: 14px">03</div>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Prezzi e catalogo</h3>
-<p style="margin: 0; color: #C3C8D2">Regole di valorizzazione e aggiornamento, da definire sul caso concreto.</p>
+
+<div style="background: #0F1115; border: 1px solid #2A2F3A; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.25">Prezzi in linea con il mercato</h3>
+<p style="margin: 0; color: #C3C8D2; font-size: 16px">Smetti di inseguire le quotazioni a mano e non rischi di svendere le carte di valore.</p>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px">
-<div style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; font-size: 14px">04</div>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Vendite e ordini</h3>
-<p style="margin: 0; color: #C3C8D2">Coordinamento tra canali, preparazione e spedizione.</p>
+
+<div style="background: #0F1115; border: 1px solid #2A2F3A; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8"></path><path d="M12 13v8"></path></svg>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.25">Ordini evasi senza affanni</h3>
+<p style="margin: 0; color: #C3C8D2; font-size: 16px">Gestisci le vendite di tutti i canali da un unico posto, senza vendere due volte la stessa carta.</p>
+</div>
+
+<div style="background: #0F1115; border: 1px solid #2A2F3A; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+<svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-7"></path><path d="M22 20H2"></path></svg>
+<h3 style="margin: 0; font-size: 19px; font-weight: 600; line-height: 1.25">Decisioni basate sui numeri</h3>
+<p style="margin: 0; color: #C3C8D2; font-size: 16px">Dashboard chiare per vedere cosa vende, cosa resta fermo e quanto guadagni davvero.</p>
+</div>
+
+</div>
+
+<!-- CTA ripetuta -->
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; border: 1px solid #2A2F3A; border-radius: 14px; padding: 24px 28px; background: #0F1115">
+<p style="margin: 0; font-size: 19px; font-weight: 600; flex: 1 1 320px">Vuoi capire quali di questi vantaggi fanno al caso tuo?</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; padding: 14px 22px; border-radius: 10px; font-weight: 600; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Richiedi la call gratuita</a>
+<a href="https://wa.me/393336397137" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #3A404D; padding: 14px 22px; border-radius: 10px; font-weight: 600; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Scrivici su WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- METODO -->
+<section id="metodo">
+<div style="max-width: 1100px; margin: 0 auto; padding: 88px 24px">
+<p style="margin: 0 0 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Il nostro metodo</p>
+<h2 style="margin: 0 0 16px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1">Metodo Deckbuilding</h2>
+<p style="margin: 0 0 40px; color: #C3C8D2; max-width: 680px">Come quando costruisci un mazzo: prima la strategia, poi la scelta delle carte giuste, infine le prove prima del torneo. Ogni progetto segue sette fasi chiare, con un risultato concreto alla fine di ciascuna.</p>
+
+<div style="border: 1px solid #2A2F3A; border-radius: 16px; background: #151820; padding: 24px; overflow-x: auto">
+<div style="min-width: 640px; display: flex; flex-direction: column; gap: 10px">
+
+<!-- intestazione macro-fasi -->
+<div style="display: flex; gap: 16px; align-items: end">
+<div style="flex: 0 0 210px"></div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #A9AFBB">
+<div style="grid-column: 1 / span 2; border-bottom: 2px solid #3A404D; padding: 0 6px 8px 0">Conoscenza</div>
+<div style="grid-column: 3 / span 4; border-bottom: 2px solid #3A404D; padding: 0 6px 8px 8px">Progettazione</div>
+<div style="grid-column: 7 / span 6; border-bottom: 2px solid #3A404D; padding: 0 0 8px 8px">Realizzazione</div>
+</div>
+</div>
+
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="flex: 0 0 210px; font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; margin-right: 8px">01</span>Primo contatto</div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 30px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
+<div style="grid-column: 1 / span 1; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
+</div>
+</div>
+
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="flex: 0 0 210px; font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; margin-right: 8px">02</span>Call conoscitiva</div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 30px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
+<div style="grid-column: 2 / span 1; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
+<div style="grid-column: 3 / span 4; align-self: center; padding-left: 8px; font-size: 12px; font-weight: 600; color: #F5C542; white-space: nowrap">Gratuita a novembre</div>
+</div>
+</div>
+
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="flex: 0 0 210px; font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; margin-right: 8px">03</span>Analisi dei requisiti</div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 30px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
+<div style="grid-column: 3 / span 2; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
+</div>
+</div>
+
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="flex: 0 0 210px; font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; margin-right: 8px">04</span>Studio di fattibilità</div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 30px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
+<div style="grid-column: 5 / span 2; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
+</div>
+</div>
+
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="flex: 0 0 210px; font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; margin-right: 8px">05</span>Sviluppo</div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 30px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
+<div style="grid-column: 7 / span 4; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
+</div>
+</div>
+
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="flex: 0 0 210px; font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; margin-right: 8px">06</span>Testing</div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 30px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
+<div style="grid-column: 9 / span 3; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
+</div>
+</div>
+
+<div style="display: flex; gap: 16px; align-items: center">
+<div style="flex: 0 0 210px; font-size: 15px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542; margin-right: 8px">07</span>Consegna</div>
+<div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 30px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
+<div style="grid-column: 12 / span 1; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
+</div>
+</div>
+
+</div>
+</div>
+<p style="margin: 14px 0 0; font-size: 14px; color: #A9AFBB">La durata di ogni fase dipende dal progetto: la definiamo insieme nello studio di fattibilità.</p>
+
+<!-- CTA ripetuta -->
+<div style="margin-top: 40px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; border: 1px solid #2A2F3A; border-radius: 14px; padding: 24px 28px; background: #151820">
+<div style="flex: 1 1 320px">
+<p style="margin: 0; font-size: 19px; font-weight: 600">Il primo passo è una chiacchierata.</p>
+<p style="margin: 4px 0 0; color: #C3C8D2; font-size: 16px">Per tutto novembre la call di analisi è gratuita.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; padding: 14px 22px; border-radius: 10px; font-weight: 600; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Richiedi la call gratuita</a>
+<a href="https://wa.me/393336397137" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #3A404D; padding: 14px 22px; border-radius: 10px; font-weight: 600; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Scrivici su WhatsApp</a>
 </div>
 </div>
 </div>
 </section>
 
 <!-- CHI SIAMO -->
-<section id="chi-siamo">
-<div style="max-width: 1100px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<section id="chi-siamo" style="border-top: 1px solid #232731">
+<div style="max-width: 1100px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
 <div style="flex: 999 1 460px; min-width: 0">
 <p style="margin: 0 0 12px; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Chi siamo</p>
 <h2 style="margin: 0 0 20px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1">Oltre dieci anni a progettare sistemi per grandi aziende.</h2>
 <p style="margin: 0; color: #C3C8D2; font-size: 18px; max-width: 560px">Siamo Giacomo e Davide. Da più di dieci anni facciamo consulenza e ingegnerizziamo processi informatici. Stanchi di fare i dipendenti, abbiamo deciso di metterci in proprio per inseguire la nostra passione: oggi portiamo la stessa esperienza nel mondo delle carte da collezione.</p>
 </div>
-<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<div style="border: 1px solid #2A2F3A; border-radius: 14px; padding: 22px 24px; background: #151820">
-<div style="display: flex; align-items: center; gap: 16px; margin-bottom: 14px">
-<img src="giacomo.jpg" alt="Giacomo" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #F5C542; background: #FFFFFF; flex: none">
+<div style="flex: 1 1 340px; min-width: 0; border: 1px solid #2A2F3A; border-radius: 16px; padding: 26px; background: #151820; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 14px">
+<div style="display: flex; flex: none">
+<img src="giacomo.jpg" alt="Giacomo" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #F5C542; background: #FFFFFF">
+<img src="davide.jpg" alt="Davide" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #F5C542; background: #FFFFFF; margin-left: -14px">
+</div>
 <div>
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px">Giacomo</div>
-<div style="font-size: 13px; color: #A9AFBB; margin-top: 2px">Ho lavorato per</div>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px">Giacomo &amp; Davide</div>
+<div style="font-size: 13px; color: #A9AFBB; margin-top: 2px">Abbiamo lavorato per</div>
 </div>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
 <span style="border: 1px solid #3A404D; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500">Unipol</span>
 <span style="border: 1px solid #3A404D; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500">Ferrero</span>
-</div>
-</div>
-<div style="border: 1px solid #2A2F3A; border-radius: 14px; padding: 22px 24px; background: #151820">
-<div style="display: flex; align-items: center; gap: 16px; margin-bottom: 14px">
-<img src="davide.jpg" alt="Davide" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid #F5C542; background: #FFFFFF; flex: none">
-<div>
-<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 22px">Davide</div>
-<div style="font-size: 13px; color: #A9AFBB; margin-top: 2px">Ho lavorato per</div>
-</div>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
 <span style="border: 1px solid #3A404D; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500">Generali</span>
 <span style="border: 1px solid #3A404D; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500">PagoPA</span>
 <span style="border: 1px solid #3A404D; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500">lastminute.com</span>
 <span style="border: 1px solid #3A404D; border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500">YOOX</span>
-</div>
 </div>
 </div>
 </div>
@@ -116,7 +233,7 @@ Prenota una call di analisi</a>
 <div style="display: flex; flex-direction: column; gap: 12px">
 <details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
 <summary style="cursor: pointer; font-weight: 600; font-size: 18px">Quanto costa?</summary>
-<p style="margin: 12px 0 0; color: #C3C8D2">Dipende da cosa emerge dall'analisi. Dopo la prima call ricevi un preventivo chiaro, diviso per aree d'intervento, così scegli da cosa partire.</p>
+<p style="margin: 12px 0 0; color: #C3C8D2">Per tutto novembre la prima call di analisi è gratuita. Per tutto il resto (analisi dei requisiti, studio di fattibilità, sviluppo, testing e consegna) dopo la call ti proponiamo un preventivo chiaro, diviso per fasi, così scegli da cosa partire.</p>
 </details>
 <details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
 <summary style="cursor: pointer; font-weight: 600; font-size: 18px">Devo ricominciare da zero con il mio magazzino?</summary>
@@ -134,32 +251,69 @@ Prenota una call di analisi</a>
 </div>
 </section>
 
-<!-- CONTATTI -->
+<!-- CONTATTI / FORM -->
 <section id="contatti" style="background: #151820; border-top: 1px solid #232731">
-<div style="max-width: 1100px; margin: 0 auto; padding: 88px 24px">
-<div style="max-width: 560px; display: flex; flex-direction: column; gap: 20px">
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">Raccontaci come lavori oggi.</h2>
-<p style="margin: 0; color: #C3C8D2">Insieme capiremo se e dove una soluzione digitale può aiutarti.</p>
-<a href="https://calendar.app.google/YJnjoNa6VZvuCASM8" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1.5px solid #F5C542; border-radius: 12px; background: #0F1115">
-<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18"></path><path d="M8 3v4"></path><path d="M16 3v4"></path></svg>
-<span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #A9AFBB">Videochiamata di 20 minuti</span><span style="font-weight: 600">Prenota una call di analisi</span></span>
-</a>
-<a href="https://wa.me/393336397137" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1px solid #2A2F3A; border-radius: 12px; background: #0F1115">
-<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
-<span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #A9AFBB">WhatsApp o telefono</span><span style="font-weight: 600">+39 333 639 7137</span></span>
-</a>
-<a href="mailto:ggdb.enterprise@gmail.com" style="text-decoration: none; display: flex; align-items: center; gap: 14px; padding: 18px 20px; border: 1px solid #2A2F3A; border-radius: 12px; background: #0F1115">
-<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
-<span style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #A9AFBB">Email</span><span style="font-weight: 600; overflow-wrap: anywhere">ggdb.enterprise@gmail.com</span></span>
-</a>
+<div style="max-width: 1100px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Gratuita per tutto novembre</p>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">Richiedi la tua call di analisi.</h2>
+<p style="margin: 0; color: #C3C8D2">Raccontaci in due righe come lavori oggi: ti ricontattiamo per fissare la call e capire insieme se e dove una soluzione digitale può aiutarti.</p>
+<p style="margin: 8px 0 0; color: #A9AFBB; font-size: 15px">Preferisci scriverci direttamente?</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="https://wa.me/393336397137" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #3A404D; padding: 14px 20px; border-radius: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; box-sizing: border-box">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+Scrivici su WhatsApp</a>
+<a href="mailto:ggdb.enterprise@gmail.com" style="text-decoration: none; border: 1.5px solid #3A404D; padding: 14px 20px; border-radius: 10px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px; min-height: 48px; box-sizing: border-box">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+Email</a>
 </div>
+</div>
+
+<form action="https://formsubmit.co/ggdb.enterprise@gmail.com" method="POST" style="flex: 1 1 460px; min-width: 0; background: #0F1115; border: 1px solid #2A2F3A; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<input type="hidden" name="_subject" value="Nuova richiesta call – Landing GGDB">
+<input type="hidden" name="_template" value="table">
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<div style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px">
+<label for="f-nome" style="font-size: 14px; color: #C3C8D2">Nome</label>
+<input id="f-nome" name="Nome" type="text" required autocomplete="given-name" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA">
+</div>
+<div style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px">
+<label for="f-cognome" style="font-size: 14px; color: #C3C8D2">Cognome</label>
+<input id="f-cognome" name="Cognome" type="text" required autocomplete="family-name" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA">
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<div style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px">
+<label for="f-email" style="font-size: 14px; color: #C3C8D2">Email</label>
+<input id="f-email" name="email" type="email" required autocomplete="email" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA">
+</div>
+<div style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px">
+<label for="f-cell" style="font-size: 14px; color: #C3C8D2">Cellulare</label>
+<input id="f-cell" name="Cellulare" type="tel" required autocomplete="tel" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA">
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-q1" style="font-size: 14px; color: #C3C8D2">Cosa vendi e su quali canali?</label>
+<textarea id="f-q1" name="Cosa vende e su quali canali" rows="2" placeholder="Es. Pokémon e Magic, negozio fisico + CardTrader" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA; resize: vertical"></textarea>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-q2" style="font-size: 14px; color: #C3C8D2">Quale attività oggi ti porta via più tempo?</label>
+<textarea id="f-q2" name="Attivita che porta via piu tempo" rows="2" placeholder="Es. aggiornare i prezzi, preparare gli ordini…" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA; resize: vertical"></textarea>
+</div>
+<div style="display: flex; gap: 10px; align-items: flex-start">
+<input id="f-privacy" name="Consenso privacy" value="Sì" type="checkbox" required style="width: 20px; height: 20px; margin: 2px 0 0; accent-color: #F5C542; flex: none">
+<label for="f-privacy" style="font-size: 14px; color: #A9AFBB">Acconsento al trattamento dei miei dati al solo scopo di essere ricontattato per questa richiesta.</label>
+</div>
+<button type="submit" style="background: #F5C542; color: #14120A; border: 0; border-radius: 10px; padding: 16px 24px; font-weight: 600; font-size: 17px; cursor: pointer; min-height: 52px">Richiedi la call gratuita</button>
+</form>
 </div>
 </section>
 
 <!-- FOOTER -->
 <footer style="border-top: 1px solid #232731">
-<div style="max-width: 1100px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; font-size: 14px; color: #A9AFBB">
-<span style="display: inline-flex; align-items: center; gap: 10px"><svg role="img" aria-label="GGDB" width="76" height="19" viewBox="0 -2 404 104"><g fill="none" stroke="#F2F0EA" stroke-width="22" stroke-linejoin="round"><path d="M86 11 H30 A19 19 0 0 0 11 30 V70 A19 19 0 0 0 30 89 H60 A19 19 0 0 0 79 70 V52 H50"></path><path d="M186 11 H130 A19 19 0 0 0 111 30 V70 A19 19 0 0 0 130 89 H160 A19 19 0 0 0 179 70 V52 H150"></path><path stroke-linejoin="miter" d="M211 11 V89 H260 A19 19 0 0 0 279 70 V30 A19 19 0 0 0 260 11 Z"></path></g><path fill="#F2F0EA" d="M300 0 H365.5 A30.5 30.5 0 0 1 389 50 A30.5 30.5 0 0 1 365.5 100 H300 V44 L322 72 V78 H365.5 A8.5 8.5 0 0 0 365.5 61 H328 V39 H365.5 A8.5 8.5 0 0 0 365.5 22 H317 Z"></path><path fill="#F5C542" d="M300 7 L322 35 V64 L300 36 Z"></path></svg>· Soluzioni digitali su misura per il mondo TCG</span>
+<div style="max-width: 1100px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; font-size: 14px; color: #A9AFBB">
+<span style="display: inline-flex; align-items: center; gap: 12px"><svg role="img" aria-label="GGDB" width="76" height="19" viewBox="0 -2 404 104"><g fill="none" stroke="#F2F0EA" stroke-width="22" stroke-linejoin="round"><path d="M86 11 H30 A19 19 0 0 0 11 30 V70 A19 19 0 0 0 30 89 H60 A19 19 0 0 0 79 70 V52 H50"></path><path d="M186 11 H130 A19 19 0 0 0 111 30 V70 A19 19 0 0 0 130 89 H160 A19 19 0 0 0 179 70 V52 H150"></path><path stroke-linejoin="miter" d="M211 11 V89 H260 A19 19 0 0 0 279 70 V30 A19 19 0 0 0 260 11 Z"></path></g><path fill="#F2F0EA" d="M300 0 H365.5 A30.5 30.5 0 0 1 389 50 A30.5 30.5 0 0 1 365.5 100 H300 V44 L322 72 V78 H365.5 A8.5 8.5 0 0 0 365.5 61 H328 V39 H365.5 A8.5 8.5 0 0 0 365.5 22 H317 Z"></path><path fill="#F5C542" d="M300 7 L322 35 V64 L300 36 Z"></path></svg><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">Soluzioni digitali</span></span>
+<a href="mailto:ggdb.enterprise@gmail.com" style="color: #A9AFBB">ggdb.enterprise@gmail.com</a>
 </div>
 </footer>
 
