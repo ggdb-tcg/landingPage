@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GGDB – Soluzioni digitali per il mondo TCG</title>
-<meta name="description" content="Le tue carte hanno un valore. Il tuo tempo anche. Chiacchierata gratuita fino al 30/11.">
+<meta name="description" content="Le tue carte hanno un valore. Il tuo tempo anche. Prima analisi gratuita fino al 30/11.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ggdb-tcg.github.io/landingPage/">
 <meta property="og:title" content="GGDB – Soluzioni digitali per il mondo TCG">
@@ -32,6 +32,10 @@ input:focus,textarea:focus{outline:2px solid #F5C542;outline-offset:1px}
 .nav-links{display:flex}
 @media (max-width:760px){.nav-links{display:none}}
 @media (max-width:760px){.nav-wa{display:none}}
+#f-ordini:invalid{color:#7A808E !important}
+#f-ordini option{color:#F2F0EA;background:#181B22}
+#faq details[open] > summary{padding-bottom:12px !important}
+@media (max-width:400px){.hero-pill{font-size:14px !important;padding:8px 14px !important;gap:8px !important}}
 @media (max-width:640px){
 .hero-top{flex-direction:column !important;align-items:flex-start !important}
 }
@@ -86,7 +90,7 @@ section[id]:not(#top) > div{padding-top:56px !important;padding-bottom:56px !imp
 <a href="#faq" style="text-decoration: none; color: #C3C8D2">FAQ</a>
 </nav>
 <div style="display: flex; gap: 10px; align-items: center">
-<a class="nav-wa" href="https://wa.me/393336397137?text=Ciao%20GGDB%21%20Ci%20siamo%20conosciuti%20a%20Lucca%20Comics%20e%20vorrei%20saperne%20di%20pi%C3%B9%20sulla%20chiacchierata%20gratuita." target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; padding: 10px 16px; border-radius: 8px; font-weight: 600; font-size: 15px; white-space: nowrap">WhatsApp</a>
+<a class="nav-wa" href="https://wa.me/393336397137?text=Ciao%21%20Ho%20preso%20il%20vostro%20biglietto%20a%20Lucca%20e%20vorrei%20prenotare%20i%2020%20minuti%20gratuiti.%20Quello%20che%20mi%20fa%20perdere%20pi%C3%B9%20tempo%20o%20soldi%20%C3%A8%3A%20" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; padding: 10px 16px; border-radius: 8px; font-weight: 600; font-size: 15px; white-space: nowrap">WhatsApp</a>
 <a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; padding: 11px 18px; border-radius: 8px; font-weight: 600; font-size: 15px; white-space: nowrap">20 minuti gratis</a>
 </div>
 </div>
@@ -96,18 +100,18 @@ section[id]:not(#top) > div{padding-top:56px !important;padding-bottom:56px !imp
 <section id="top" style="max-width: 1100px; margin: 0 auto; padding: 80px 24px 96px">
 <div class="hero-top" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 0 0 28px">
 <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Lucca Comics &amp; Games 2026</p>
-<div style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border: 1.5px solid #F5C542; border-radius: 999px; font-size: 15px; font-weight: 500">
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"></path><path d="M2 7h20v5H2z"></path><path d="M12 21V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-Chiacchierata gratuita fino al 30/11
-</div>
+<a class="hero-pill" href="#contatti" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border: 1.5px solid #F5C542; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; color: #F2F0EA; white-space: nowrap">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M20 12v9H4v-9"></path><path d="M2 7h20v5H2z"></path><path d="M12 21V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+Prima analisi gratuita fino al 30/11 →
+</a>
 </div>
 <h1 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(38px, 6vw, 68px); line-height: 1.04; letter-spacing: -0.02em; max-width: 960px">Le tue carte hanno un valore. <span style="display: block; color: #F5C542">Il tuo tempo anche.</span></h1>
 <p style="margin: 32px 0 0; font-size: 22px; font-weight: 600; color: #F2F0EA; max-width: 680px">Partiamo dal tuo modo di lavorare.</p>
-<p style="margin: 8px 0 0; font-size: 20px; color: #C3C8D2; max-width: 680px">Analizziamo i processi della tua attività e costruiamo soluzioni digitali che ti fanno risparmiare tempo e lavorare meglio.</p>
+<p style="margin: 8px 0 0; font-size: 20px; color: #C3C8D2; max-width: 680px">Analizziamo la tua attività e costruiamo soluzioni digitali su misura: tu guadagni tempo per i tuoi clienti e le tue carte.</p>
 <p style="margin: 32px 0 0; font-size: 18px; font-weight: 600">Raccontaci cosa ti fa perdere più tempo o soldi:</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px">
 <a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; border: 1.5px solid #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">Prenota 20 minuti gratis</a>
-<a href="https://wa.me/393336397137?text=Ciao%20GGDB%21%20Ci%20siamo%20conosciuti%20a%20Lucca%20Comics%20e%20vorrei%20saperne%20di%20pi%C3%B9%20sulla%20chiacchierata%20gratuita." target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
+<a href="https://wa.me/393336397137?text=Ciao%21%20Ho%20preso%20il%20vostro%20biglietto%20a%20Lucca%20e%20vorrei%20prenotare%20i%2020%20minuti%20gratuiti.%20Quello%20che%20mi%20fa%20perdere%20pi%C3%B9%20tempo%20o%20soldi%20%C3%A8%3A%20" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
 Scrivici su WhatsApp</a>
 </div>
@@ -163,7 +167,7 @@ Scrivici su WhatsApp</a>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; border: 1.5px solid #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">Prenota 20 minuti gratis</a>
-<a href="https://wa.me/393336397137?text=Ciao%20GGDB%21%20Ci%20siamo%20conosciuti%20a%20Lucca%20Comics%20e%20vorrei%20saperne%20di%20pi%C3%B9%20sulla%20chiacchierata%20gratuita." target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
+<a href="https://wa.me/393336397137?text=Ciao%21%20Ho%20preso%20il%20vostro%20biglietto%20a%20Lucca%20e%20vorrei%20prenotare%20i%2020%20minuti%20gratuiti.%20Quello%20che%20mi%20fa%20perdere%20pi%C3%B9%20tempo%20o%20soldi%20%C3%A8%3A%20" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
 Scrivici su WhatsApp</a>
 </div>
@@ -188,8 +192,8 @@ Scrivici su WhatsApp</a>
 
 <div class="g-row" style="display: flex; gap: 20px; align-items: center">
 <div class="g-label" style="flex: 0 0 300px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542">01</span><span style="font-size: 17px; font-weight: 600">Chiacchierata gratuita</span><span style="padding: 2px 10px; border: 1px solid #F5C542; border-radius: 999px; font-size: 12px; font-weight: 600; color: #F5C542">Gratis fino al 30/11</span></div>
-<p style="margin: 4px 0 0; font-size: 15px; color: #C3C8D2; line-height: 1.45">20 minuti: ci racconti come lavori, ti diciamo dove perdi tempo e soldi.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542">01</span><span style="font-size: 17px; font-weight: 600">Prima analisi gratuita</span><span style="padding: 2px 10px; border: 1px solid #F5C542; border-radius: 999px; font-size: 12px; font-weight: 600; color: #F5C542">Fino al 30/11</span></div>
+<p style="margin: 4px 0 0; font-size: 15px; color: #C3C8D2; line-height: 1.45">Una chiacchierata di 20 minuti: ci racconti come lavori e capiamo insieme dove vale la pena intervenire.</p>
 </div>
 <div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 32px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
 <div style="grid-column: 1 / span 1; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
@@ -198,8 +202,8 @@ Scrivici su WhatsApp</a>
 
 <div class="g-row" style="display: flex; gap: 20px; align-items: center">
 <div class="g-label" style="flex: 0 0 300px">
-<div style="display: flex; align-items: center; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542">02</span><span style="font-size: 17px; font-weight: 600">Analisi e proposta</span></div>
-<p style="margin: 4px 0 0; font-size: 15px; color: #C3C8D2; line-height: 1.45">Fasi, tempi e costi chiari. Scegli tu da dove partire.</p>
+<div style="display: flex; align-items: center; gap: 10px"><span style="font-family: 'IBM Plex Mono', monospace; color: #F5C542">02</span><span style="font-size: 17px; font-weight: 600">Analisi approfondita e proposta</span></div>
+<p style="margin: 4px 0 0; font-size: 15px; color: #C3C8D2; line-height: 1.45">Studiamo a fondo i tuoi processi e ti proponiamo fasi, tempi e costi chiari. Scegli tu da dove partire.</p>
 </div>
 <div style="flex: 1 1 auto; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); height: 32px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / 12 - 1px), #232731 calc(100% / 12 - 1px), #232731 calc(100% / 12)); border-radius: 6px">
 <div style="grid-column: 2 / span 3; background: #F5C542; border-radius: 6px; margin: 4px 2px"></div>
@@ -240,7 +244,7 @@ Nessun impegno oltre i primi 20 minuti: decidi tu, fase per fase.</p>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#contatti" style="text-decoration: none; background: #F5C542; color: #14120A; border: 1.5px solid #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">Prenota 20 minuti gratis</a>
-<a href="https://wa.me/393336397137?text=Ciao%20GGDB%21%20Ci%20siamo%20conosciuti%20a%20Lucca%20Comics%20e%20vorrei%20saperne%20di%20pi%C3%B9%20sulla%20chiacchierata%20gratuita." target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
+<a href="https://wa.me/393336397137?text=Ciao%21%20Ho%20preso%20il%20vostro%20biglietto%20a%20Lucca%20e%20vorrei%20prenotare%20i%2020%20minuti%20gratuiti.%20Quello%20che%20mi%20fa%20perdere%20pi%C3%B9%20tempo%20o%20soldi%20%C3%A8%3A%20" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
 Scrivici su WhatsApp</a>
 </div>
@@ -292,7 +296,7 @@ Scrivici su WhatsApp</a>
 <p style="margin: 0; color: #C3C8D2; font-size: 18px">Così abbiamo messo il nostro mestiere al servizio della nostra passione.</p>
 <blockquote style="margin: 4px 0 0; padding: 2px 0 2px 24px; border-left: 3px solid #F5C542; font-size: 19px; font-weight: 600; line-height: 1.45; color: #F2F0EA">Oggi portiamo la stessa esperienza ai professionisti del mondo TCG, e ogni progetto ci insegna qualcosa che portiamo anche nel tuo.</blockquote>
 <div>
-<a href="https://wa.me/393336397137?text=Ciao%20GGDB%21%20Ci%20siamo%20conosciuti%20a%20Lucca%20Comics%20e%20vorrei%20saperne%20di%20pi%C3%B9%20sulla%20chiacchierata%20gratuita." target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
+<a href="https://wa.me/393336397137?text=Ciao%21%20Ho%20preso%20il%20vostro%20biglietto%20a%20Lucca%20e%20vorrei%20prenotare%20i%2020%20minuti%20gratuiti.%20Quello%20che%20mi%20fa%20perdere%20pi%C3%B9%20tempo%20o%20soldi%20%C3%A8%3A%20" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
 Scrivi a Giacomo e Davide</a>
 </div>
@@ -307,34 +311,26 @@ Scrivi a Giacomo e Davide</a>
 <div style="max-width: 820px; margin: 0 auto; padding: 80px 24px">
 <h2 style="margin: 0 0 32px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(28px, 3.5vw, 40px); line-height: 1.1">Domande frequenti</h2>
 <div style="display: flex; flex-direction: column; gap: 12px">
-<details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
-<summary style="cursor: pointer; font-weight: 600; font-size: 18px">Quanto costa?</summary>
-<p style="margin: 12px 0 0; color: #C3C8D2">I primi 20 minuti sono gratuiti fino al 30/11: ci servono per capire come lavori e dove si perde tempo. Se c'è margine per migliorare, ti prepariamo una proposta chiara, con fasi, tempi e costi per ciascuna, e scegli tu da dove partire.</p>
+<details style="border: 1px solid #2A2F3A; border-radius: 12px; background: #151820">
+<summary style="cursor: pointer; font-weight: 600; font-size: 18px; padding: 18px 22px; min-height: 48px; box-sizing: border-box">Quanto costa?</summary>
+<p style="margin: 0; padding: 0 22px 18px; color: #C3C8D2">Per iniziare, niente: la prima analisi parte da una chiacchierata di 20 minuti, al telefono o in videochiamata, gratuita fino al 30/11. Se c'è margine per migliorare, approfondiamo e ti prepariamo una proposta chiara, con fasi, tempi e costi per ciascuna: scegli tu da dove partire.</p>
 </details>
-<details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
-<summary style="cursor: pointer; font-weight: 600; font-size: 18px">Come funzionano i 20 minuti gratuiti?</summary>
-<p style="margin: 12px 0 0; color: #C3C8D2">Al telefono o in videochiamata, quando ti è comodo. Non devi preparare niente: ci racconti come lavori oggi e ti diciamo dove vediamo margine per migliorare. Nessun impegno.</p>
+<details style="border: 1px solid #2A2F3A; border-radius: 12px; background: #151820">
+<summary style="cursor: pointer; font-weight: 600; font-size: 18px; padding: 18px 22px; min-height: 48px; box-sizing: border-box">Ho già un gestionale: devo ricominciare da zero?</summary>
+<p style="margin: 0; padding: 0 22px 18px; color: #C3C8D2">No. Partiamo da quello che hai già: il software che usi, i tuoi file, i tuoi dati. Spesso conviene collegare e completare ciò che funziona, invece di sostituirlo.</p>
 </details>
-<details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
-<summary style="cursor: pointer; font-weight: 600; font-size: 18px">Ho già un gestionale: devo ricominciare da zero?</summary>
-<p style="margin: 12px 0 0; color: #C3C8D2">No. Partiamo da quello che hai già: il software che usi, i tuoi file, i tuoi dati. Spesso conviene collegare e completare ciò che funziona, invece di sostituirlo.</p>
+<details style="border: 1px solid #2A2F3A; border-radius: 12px; background: #151820">
+<summary style="cursor: pointer; font-weight: 600; font-size: 18px; padding: 18px 22px; min-height: 48px; box-sizing: border-box">Funziona con i marketplace che uso?</summary>
+<p style="margin: 0; padding: 0 22px 18px; color: #C3C8D2">Conosciamo e lavoriamo sui principali marketplace, come Cardmarket, CardTrader, eBay e Vinted, e con il tuo e-commerce. Per ognuno valutiamo insieme il modo migliore di collegarlo alla tua attività.</p>
 </details>
-<details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
-<summary style="cursor: pointer; font-weight: 600; font-size: 18px">Funziona con i marketplace che uso?</summary>
-<p style="margin: 12px 0 0; color: #C3C8D2">Conosciamo e lavoriamo sui principali marketplace, come Cardmarket, CardTrader, eBay e Vinted, e con il tuo e-commerce. Per ognuno valutiamo insieme il modo migliore di collegarlo alla tua attività.</p>
-</details>
-<details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
-<summary style="cursor: pointer; font-weight: 600; font-size: 18px">Quanto tempo ci vuole?</summary>
-<p style="margin: 12px 0 0; color: #C3C8D2">Il primo passo è veloce: ci sentiamo e ti mandiamo la proposta in pochi giorni. I tempi di sviluppo dipendono da cosa scegli di fare e li trovi, fase per fase, nella proposta.</p>
-</details>
-<details style="border: 1px solid #2A2F3A; border-radius: 12px; padding: 18px 22px; background: #151820">
-<summary style="cursor: pointer; font-weight: 600; font-size: 18px">E se in futuro mi serve una nuova funzionalità?</summary>
-<p style="margin: 12px 0 0; color: #C3C8D2">La soluzione cresce con la tua attività. Ne parliamo insieme e ti facciamo una proposta dedicata, con tempi e costi chiari.</p>
+<details style="border: 1px solid #2A2F3A; border-radius: 12px; background: #151820">
+<summary style="cursor: pointer; font-weight: 600; font-size: 18px; padding: 18px 22px; min-height: 48px; box-sizing: border-box">Quanto tempo ci vuole?</summary>
+<p style="margin: 0; padding: 0 22px 18px; color: #C3C8D2">Il primo passo è veloce: ci sentiamo e ti mandiamo la proposta in pochi giorni. I tempi di sviluppo dipendono da cosa scegli di fare e li trovi, fase per fase, nella proposta.</p>
 </details>
 </div>
 <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px 20px; align-items: center; justify-content: space-between">
 <p style="margin: 0; font-size: 18px; font-weight: 600">Hai un'altra domanda?</p>
-<a href="https://wa.me/393336397137?text=Ciao%20GGDB%21%20Ci%20siamo%20conosciuti%20a%20Lucca%20Comics%20e%20vorrei%20saperne%20di%20pi%C3%B9%20sulla%20chiacchierata%20gratuita." target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
+<a href="https://wa.me/393336397137?text=Ciao%21%20Ho%20letto%20la%20vostra%20pagina%20e%20ho%20una%20domanda%3A%20" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
 Scrivici su WhatsApp</a>
 </div>
@@ -346,17 +342,17 @@ Scrivici su WhatsApp</a>
 <div style="max-width: 1100px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
 <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
 <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Gratuita fino al 30/11</p>
-<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">Prenota la tua chiacchierata gratuita.</h2>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: clamp(30px, 4vw, 44px); line-height: 1.1">Prenota la tua prima analisi gratuita.</h2>
 <p style="margin: 0; color: #C3C8D2">Raccontaci in due righe cosa ti fa perdere più tempo o soldi. A novembre diamo la precedenza a chi abbiamo conosciuto a Lucca: ti ricontattiamo in fretta per fissare 20 minuti, al telefono o in videochiamata.</p>
 <p style="margin: 8px 0 0; color: #A9AFBB; font-size: 15px">Preferisci scriverci direttamente?</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="https://wa.me/393336397137?text=Ciao%20GGDB%21%20Ci%20siamo%20conosciuti%20a%20Lucca%20Comics%20e%20vorrei%20saperne%20di%20pi%C3%B9%20sulla%20chiacchierata%20gratuita." target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
+<a href="https://wa.me/393336397137?text=Ciao%21%20Ho%20preso%20il%20vostro%20biglietto%20a%20Lucca%20e%20vorrei%20prenotare%20i%2020%20minuti%20gratuiti.%20Quello%20che%20mi%20fa%20perdere%20pi%C3%B9%20tempo%20o%20soldi%20%C3%A8%3A%20" target="_blank" rel="noopener" style="text-decoration: none; border: 1.5px solid #F5C542; color: #F5C542; width: 300px; max-width: 100%; min-height: 52px; padding: 0 20px; border-radius: 10px; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-sizing: border-box">
 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
 Scrivici su WhatsApp</a></div>
 </div>
 
 <form action="https://formsubmit.co/ggdb.enterprise@gmail.com" method="POST" style="flex: 1 1 460px; min-width: 0; background: #0F1115; border: 1px solid #2A2F3A; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<input type="hidden" name="_subject" value="Nuova richiesta di chiacchierata gratuita – Landing GGDB">
+<input type="hidden" name="_subject" value="Nuova richiesta di prima analisi gratuita – Landing GGDB">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://ggdb-tcg.github.io/landingPage/grazie.html">
 <input type="hidden" name="_captcha" value="false">
@@ -364,6 +360,10 @@ Scrivici su WhatsApp</a></div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="f-nome" style="font-size: 14px; color: #C3C8D2">Nome e cognome <span aria-hidden="true" style="color: #F5C542">*</span></label>
 <input id="f-nome" name="Nome e cognome" type="text" required autocomplete="name" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA">
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<label for="f-negozio" style="font-size: 14px; color: #C3C8D2">Nome del negozio o dell'attività <span aria-hidden="true" style="color: #F5C542">*</span></label>
+<input id="f-negozio" name="Negozio o attività" type="text" required autocomplete="organization" placeholder="Negozio o profilo Cardmarket" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA">
 </div>
 <fieldset style="margin: 0; padding: 0; border: 0; min-width: 0; display: flex; flex-direction: column; gap: 6px">
 <legend style="padding: 0; margin-bottom: 6px; font-size: 14px; color: #C3C8D2">Come ti ricontattiamo? <span aria-hidden="true" style="color: #F5C542">*</span> <span style="color: #A9AFBB">Basta uno dei due.</span></legend>
@@ -379,12 +379,21 @@ Scrivici su WhatsApp</a></div>
 </div>
 </fieldset>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="f-q2" style="font-size: 14px; color: #C3C8D2">Cosa ti fa perdere più tempo o soldi? <span aria-hidden="true" style="color: #F5C542">*</span></label>
-<textarea id="f-q2" name="Attivita che fa perdere piu tempo" rows="2" required placeholder="Es. aggiornare i prezzi, preparare gli ordini…" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA; resize: vertical"></textarea>
+<label for="f-ordini" style="font-size: 14px; color: #C3C8D2">Quanti ordini gestisci in media a settimana? <span aria-hidden="true" style="color: #F5C542">*</span></label>
+<div style="position: relative">
+<select id="f-ordini" name="Ordini a settimana" required style="width: 100%; box-sizing: border-box; background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 44px 13px 14px; color: #F2F0EA; font-size: 17px; appearance: none; -webkit-appearance: none; color-scheme: dark; cursor: pointer">
+<option value="" disabled selected>Scegli un'opzione</option>
+<option>0–100</option>
+<option>101–250</option>
+<option>251–500</option>
+<option>501+</option>
+</select>
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C3C8D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); pointer-events: none"><path d="M6 9l6 6 6-6"></path></svg>
+</div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<label for="f-q1" style="font-size: 14px; color: #C3C8D2">Cosa vendi e su quali canali? <span style="color: #A9AFBB">(facoltativo)</span></label>
-<textarea id="f-q1" name="Cosa vende e su quali canali" rows="2" placeholder="Es. Pokémon e Magic, negozio fisico + CardTrader" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA; resize: vertical"></textarea>
+<label for="f-altro" style="font-size: 14px; color: #C3C8D2">Vuoi aggiungere qualcosa? <span style="color: #A9AFBB">(facoltativo)</span></label>
+<textarea id="f-altro" name="Altro" rows="3" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA; resize: vertical">Quello che mi fa perdere più tempo o soldi è </textarea>
 </div>
 <p style="margin: 0; font-size: 13px; color: #A9AFBB"><span style="color: #F5C542">*</span> Campi obbligatori</p>
 <div style="display: flex; gap: 10px; align-items: flex-start">
@@ -419,8 +428,22 @@ Scrivici su WhatsApp</a></div>
       e.preventDefault();
       email.setCustomValidity('Inserisci almeno un contatto: email o cellulare.');
       email.reportValidity();
+      return;
+    }
+    // An untouched (or emptied) free-text field must not reach the email as a half sentence.
+    if (altro && (!altro.value.trim() || altro.value.trimEnd() === PREFILL.trimEnd())) {
+      altro.value = '';
     }
   });
+  // The free-text field starts with an unfinished sentence: put the caret at its end.
+  var altro = document.getElementById('f-altro');
+  var PREFILL = altro ? altro.defaultValue : '';
+  if (altro) {
+    altro.addEventListener('focus', function () {
+      var el = this;
+      setTimeout(function () { var n = el.value.length; el.setSelectionRange(n, n); }, 0);
+    });
+  }
 })();
 </script>
 </body>
