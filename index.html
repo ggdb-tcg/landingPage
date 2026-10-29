@@ -15,6 +15,7 @@
 <meta property="og:locale" content="it_IT">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F1115'/%3E%3Cpath d='M9 6l7 9v11l-7-9z' fill='%23F5C542'/%3E%3C/svg%3E">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="bbd655cf-6ce8-4dc6-accc-16206d7ab82c" data-domains="ggdb-tcg.github.io"></script>
 <style>
 @font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bricolage-grotesque-latin-500-normal.woff2) format('woff2')}
 @font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bricolage-grotesque-latin-700-normal.woff2) format('woff2')}
@@ -35,7 +36,6 @@ input:focus,textarea:focus{outline:2px solid #F5C542;outline-offset:1px}
 #f-ordini:invalid{color:#7A808E !important}
 #f-ordini option{color:#F2F0EA;background:#181B22}
 #faq details[open] > summary{padding-bottom:12px !important}
-@media (max-width:400px){.hero-pill{font-size:14px !important;padding:8px 14px !important;gap:8px !important}}
 @media (max-width:640px){
 .hero-top{flex-direction:column !important;align-items:flex-start !important}
 }
@@ -100,8 +100,8 @@ section[id]:not(#top) > div{padding-top:56px !important;padding-bottom:56px !imp
 <section id="top" style="max-width: 1100px; margin: 0 auto; padding: 80px 24px 96px">
 <div class="hero-top" style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 0 0 28px">
 <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 14px; color: #F5C542; letter-spacing: 0.06em; text-transform: uppercase">Lucca Comics &amp; Games 2026</p>
-<a class="hero-pill" href="#contatti" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border: 1.5px solid #F5C542; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; color: #F2F0EA; white-space: nowrap">
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M20 12v9H4v-9"></path><path d="M2 7h20v5H2z"></path><path d="M12 21V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+<a class="hero-pill" href="#contatti" style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px; border: 1.5px solid #F5C542; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; color: #F2F0EA">
+<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C542" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"></path><path d="M2 7h20v5H2z"></path><path d="M12 21V7"></path><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
 Prima analisi gratuita fino al 30/11 →
 </a>
 </div>
@@ -416,16 +416,99 @@ Scrivici su WhatsApp</a></div>
 </div>
 <script>
 (function () {
+  // Analytics calls must never break the page: if Umami is blocked or not loaded yet, they do nothing.
+  function track(name, data) {
+    try { if (window.umami && window.umami.track) return Promise.resolve(window.umami.track(name, data)); } catch (e) {}
+    return Promise.resolve();
+  }
+  var SEZIONI = {top: 'hero', vantaggi: 'vantaggi', metodo: 'metodo', 'chi-siamo': 'chi siamo', faq: 'faq', contatti: 'contatti'};
+  function posizione(el) {
+    if (el.closest('header')) return 'header';
+    var s = el.closest('section[id]');
+    return s ? (SEZIONI[s.id] || s.id) : 'footer';
+  }
+
+  // Button clicks, labelled by where on the page they were tapped.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (a.classList.contains('hero-pill')) track('Clic pillola promo');
+    else if (href.indexOf('wa.me') > -1) track('Clic WhatsApp', {posizione: posizione(a)});
+    else if (href === '#contatti') track('Clic Prenota 20 minuti', {posizione: posizione(a)});
+    else if (href.indexOf('privacy') > -1) track('Clic privacy', {posizione: posizione(a)});
+  });
+
+  // Which FAQ get opened.
+  document.querySelectorAll('#faq details').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) track('FAQ aperta', {domanda: d.querySelector('summary').textContent.trim()});
+    });
+  });
+
+  // How far people scroll: each section counted once per visit.
+  // A low threshold, because on phones some sections are taller than the screen.
+  if ('IntersectionObserver' in window) {
+    var visto = {};
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting || visto[en.target.id]) return;
+        visto[en.target.id] = true;
+        track('Sezione vista', {sezione: SEZIONI[en.target.id] || en.target.id});
+        io.unobserve(en.target);
+      });
+    }, {threshold: 0.1});
+    document.querySelectorAll('section[id]').forEach(function (s) { if (s.id !== 'top') io.observe(s); });
+  }
+
   var form = document.querySelector('form[action*="formsubmit"]');
   if (!form) return;
   var email = document.getElementById('f-email');
   var cell = document.getElementById('f-cell');
+  var altro = document.getElementById('f-altro');
+  var PREFILL = altro ? altro.defaultValue : '';
+  var CAMPI = {'f-nome': 'nome', 'f-negozio': 'negozio', 'f-email': 'email', 'f-cell': 'cellulare', 'f-ordini': 'ordini', 'f-altro': 'campo libero', 'f-privacy': 'privacy'};
+  var iniziato = false, inviato = false, ultimoCampo = '', compilati = {}, erroreSegnalato = false;
+
+  // Form started = first field touched; the last field touched tells where people stop.
+  form.addEventListener('focusin', function (e) {
+    var nome = CAMPI[e.target.id];
+    if (!nome) return;
+    ultimoCampo = nome;
+    if (!iniziato) { iniziato = true; track('Form iniziato'); }
+  });
+  form.addEventListener('change', function (e) {
+    var nome = CAMPI[e.target.id];
+    if (!nome || compilati[nome]) return;
+    var pieno = e.target.type === 'checkbox' ? e.target.checked : String(e.target.value).trim() !== '';
+    if (pieno) { compilati[nome] = true; track('Form campo compilato', {campo: nome}); }
+  });
+  // Native "required" failures: report the first missing field once per attempt.
+  form.addEventListener('invalid', function (e) {
+    if (erroreSegnalato) return;
+    erroreSegnalato = true;
+    track('Form errore', {campo: CAMPI[e.target.id] || e.target.name});
+    // All "invalid" events of one attempt fire in the same tick: reset right after it.
+    setTimeout(function () { erroreSegnalato = false; }, 0);
+  }, true);
+
   function clear() { email.setCustomValidity(''); }
   email.addEventListener('input', clear);
   cell.addEventListener('input', clear);
+
+  if (altro) {
+    // The free-text field starts with an unfinished sentence: put the caret at its end.
+    altro.addEventListener('focus', function () {
+      var el = this;
+      setTimeout(function () { var n = el.value.length; el.setSelectionRange(n, n); }, 0);
+    });
+  }
+
   form.addEventListener('submit', function (e) {
+    // "Email OR mobile" can't be expressed with HTML required, so it is checked here.
     if (!email.value.trim() && !cell.value.trim()) {
       e.preventDefault();
+      track('Form errore', {campo: 'email o cellulare'});
       email.setCustomValidity('Inserisci almeno un contatto: email o cellulare.');
       email.reportValidity();
       return;
@@ -434,16 +517,19 @@ Scrivici su WhatsApp</a></div>
     if (altro && (!altro.value.trim() || altro.value.trimEnd() === PREFILL.trimEnd())) {
       altro.value = '';
     }
+    // Give the "sent" event up to 0.8 s to leave before the browser navigates to FormSubmit.
+    inviato = true;
+    e.preventDefault();
+    var ordini = document.getElementById('f-ordini');
+    var timeout = new Promise(function (r) { setTimeout(r, 800); });
+    Promise.race([track('Form inviato', {ordini: ordini ? ordini.value : ''}), timeout])
+      .then(function () { form.submit(); }, function () { form.submit(); });
   });
-  // The free-text field starts with an unfinished sentence: put the caret at its end.
-  var altro = document.getElementById('f-altro');
-  var PREFILL = altro ? altro.defaultValue : '';
-  if (altro) {
-    altro.addEventListener('focus', function () {
-      var el = this;
-      setTimeout(function () { var n = el.value.length; el.setSelectionRange(n, n); }, 0);
-    });
-  }
+
+  // Leaving after starting the form without sending it = an abandoned form (best effort).
+  window.addEventListener('pagehide', function () {
+    if (iniziato && !inviato) track('Form abbandonato', {ultimo_campo: ultimoCampo});
+  });
 })();
 </script>
 </body>
