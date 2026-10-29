@@ -358,12 +358,12 @@ Scrivici su WhatsApp</a>
 Scrivici su WhatsApp</a></div>
 </div>
 
-<form action="https://formsubmit.co/ggdb.enterprise@gmail.com" method="POST" style="flex: 1 1 460px; min-width: 0; background: #0F1115; border: 1px solid #2A2F3A; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
-<input type="hidden" name="_subject" value="Nuova richiesta di prima analisi gratuita – Landing GGDB">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://ggdb-tcg.github.io/landingPage/grazie.html">
-<input type="hidden" name="_captcha" value="false">
-<input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" aria-hidden="true">
+<form action="https://api.web3forms.com/submit" method="POST" style="flex: 1 1 460px; min-width: 0; background: #0F1115; border: 1px solid #2A2F3A; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<input type="hidden" name="access_key" value="c37c6102-7838-48f9-a68e-770cd5c8535b">
+<input type="hidden" name="subject" value="Nuova richiesta di prima analisi gratuita – Landing GGDB">
+<input type="hidden" name="from_name" value="Landing GGDB">
+<input type="hidden" name="redirect" value="https://ggdb-tcg.github.io/landingPage/grazie.html">
+<input type="checkbox" name="botcheck" style="display: none" tabindex="-1" autocomplete="off" aria-hidden="true">
 <div style="display: flex; flex-direction: column; gap: 6px">
 <label for="f-nome" style="font-size: 14px; color: #C3C8D2">Nome e cognome <span aria-hidden="true" style="color: #F5C542">*</span></label>
 <input id="f-nome" name="Nome e cognome" type="text" required autocomplete="name" style="background: #181B22; border: 1px solid #3A404D; border-radius: 8px; padding: 13px 14px; color: #F2F0EA">
@@ -468,14 +468,14 @@ Scrivici su WhatsApp</a></div>
     document.querySelectorAll('section[id]').forEach(function (s) { if (s.id !== 'top') io.observe(s); });
   }
 
-  var form = document.querySelector('form[action*="formsubmit"]');
+  var form = document.querySelector('form[action*="web3forms"]');
   if (!form) return;
   var email = document.getElementById('f-email');
   var cell = document.getElementById('f-cell');
   var altro = document.getElementById('f-altro');
   var PREFILL = altro ? altro.defaultValue : '';
   var CAMPI = {'f-nome': 'nome', 'f-negozio': 'negozio', 'f-email': 'email', 'f-cell': 'cellulare', 'f-ordini': 'ordini', 'f-altro': 'campo libero', 'f-privacy': 'privacy'};
-  var iniziato = false, inviato = false, ultimoCampo = '', compilati = {}, erroreSegnalato = false;
+  var iniziato = false, inviato = false, inviando = false, ultimoCampo = '', compilati = {}, erroreSegnalato = false;
 
   // Form started = first field touched; the last field touched tells where people stop.
   form.addEventListener('focusin', function (e) {
@@ -524,14 +524,69 @@ Scrivici su WhatsApp</a></div>
     if (altro && (!altro.value.trim() || altro.value.trimEnd() === PREFILL.trimEnd())) {
       altro.value = '';
     }
-    // Give the "sent" event up to 0.8 s to leave before the browser navigates to FormSubmit.
-    inviato = true;
+    // Sent in the background, so a provider outage never shows the visitor an error page:
+    // success opens grazie.html, failure offers the same data on WhatsApp.
     e.preventDefault();
+    if (inviando) return;
+    var bot = form.querySelector('[name="botcheck"]');
+    if (bot && bot.checked) return;
+    inviando = true;
+    inviato = true;
+    var bottone = form.querySelector('button[type="submit"]');
+    var testo = bottone.textContent;
+    bottone.disabled = true;
+    bottone.textContent = 'Invio in corso…';
     var ordini = document.getElementById('f-ordini');
-    var timeout = new Promise(function (r) { setTimeout(r, 800); });
-    Promise.race([track('Form inviato', {ordini: ordini ? ordini.value : ''}), timeout])
-      .then(function () { form.submit(); }, function () { form.submit(); });
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var stop = setTimeout(function () { if (ctrl) ctrl.abort(); }, 12000);
+    fetch(form.action, {method: 'POST', body: new FormData(form), headers: {Accept: 'application/json'}, signal: ctrl ? ctrl.signal : undefined})
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return r.ok && j.success !== false; }); })
+      .catch(function () { return false; })
+      .then(function (ok) {
+        clearTimeout(stop);
+        if (ok) {
+          var attesa = new Promise(function (r) { setTimeout(r, 800); });
+          Promise.race([track('Form inviato', {ordini: ordini ? ordini.value : ''}), attesa])
+            .then(function () { location.href = 'grazie.html'; });
+        } else {
+          track('Form fallito');
+          inviando = false;
+          bottone.disabled = false;
+          bottone.textContent = testo;
+          mostraAlternativa();
+          // The untouched free-text field was emptied for sending: give the sentence back.
+          if (altro && !altro.value) altro.value = PREFILL;
+        }
+      });
   });
+
+  // Fallback when the form service is unreachable: nothing typed is lost, it moves to WhatsApp.
+  function mostraAlternativa() {
+    var vecchio = document.getElementById('form-fallito');
+    if (vecchio) vecchio.remove();
+    function v(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+    var righe = ['Ciao! Ho provato a compilare il modulo sulla vostra pagina ma non è partito. Ecco i miei dati:',
+      'Nome: ' + v('f-nome'), 'Negozio: ' + v('f-negozio')];
+    if (v('f-email')) righe.push('Email: ' + v('f-email'));
+    if (v('f-cell')) righe.push('Cellulare: ' + v('f-cell'));
+    righe.push('Ordini a settimana: ' + v('f-ordini'));
+    if (v('f-altro')) righe.push(v('f-altro'));
+    var link = 'https://wa.me/393336397137?text=' + encodeURIComponent(righe.join('\n'));
+    var box = document.createElement('div');
+    box.id = 'form-fallito';
+    box.setAttribute('role', 'alert');
+    box.style.cssText = 'border:1.5px solid #F5C542;border-radius:12px;padding:18px 20px;background:#151820;display:flex;flex-direction:column;gap:12px';
+    var p = document.createElement('p');
+    p.style.cssText = 'margin:0;color:#F2F0EA;font-size:16px';
+    p.textContent = 'Non siamo riusciti a inviare il modulo, ma i tuoi dati non sono persi: mandaceli su WhatsApp con un tocco, il messaggio è già pronto.';
+    var a = document.createElement('a');
+    a.href = link; a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = 'Invia i dati su WhatsApp';
+    a.style.cssText = 'text-decoration:none;border:1.5px solid #F5C542;color:#F5C542;min-height:52px;padding:0 20px;border-radius:10px;font-weight:600;font-size:16px;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box';
+    box.appendChild(p); box.appendChild(a);
+    form.appendChild(box);
+    box.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
 
   // Leaving after starting the form without sending it = an abandoned form (best effort).
   window.addEventListener('pagehide', function () {
